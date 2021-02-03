@@ -6,9 +6,12 @@ const PaymentInfo = (props) => {
 
   return (
     <div id="test">
-      <h1> Monthly Payments:</h1>
-      <h2> {props.payment}</h2>
-      <h2> loan Amount = {props.loanAmount} </h2>
+      <div id="paymentText"> 
+        <h1> Monthly Payments:</h1>
+        <h2 id="total"> ${props.payment}</h2>
+        <h2> Total Principal Paid: ${props.loanAmount} </h2>
+       
+      </div>
     </div>
   )
 }

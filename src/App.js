@@ -3,13 +3,14 @@ import React  from 'react';
 import Loan from './components/Loan'
 
 
+
 function App() {
 
 
 
 
   return (
-      <div>
+      <div id="parentDiv">
         <Loan/>
       </div>
   );

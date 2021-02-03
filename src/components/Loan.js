@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import { useForm } from "react-hook-form";
 import PaymentInfo from './PaymentInfo'
+import Chart from "react-google-charts";
 
 
 
@@ -19,7 +20,7 @@ const [interest, setInterest] = useState(4.5)
 
 const [roundedTerm, setRoundedTerm] = useState(5)
 
-const [payment, setPayment] = useState("")
+const [payment, setPayment] = useState(93.22)
 
 
 //this function will grab the user input and set the new state for the fields.
@@ -70,6 +71,7 @@ const [payment, setPayment] = useState("")
 
 
 
+  
 // emi (monthly payments) calculation = p*(r(1+r)^n) / (((1+r)^n) -1) 
 
 //                      KEY:
@@ -116,7 +118,31 @@ const [payment, setPayment] = useState("")
             {/* <h3 id="Payment"> {payment} Dollars per Month</h3>    */}
         </form>
     </div>
-        <PaymentInfo payment={payment} loanAmount={loanAmount}/>
+        <PaymentInfo payment={payment} loanAmount={loanAmount} interest={interest} />
+        <div id="chart">
+            <Chart
+                width={'500px'}
+                height={'300px'}
+                chartType="PieChart"
+                loader={<div>Loading Chart</div>}
+                data={[
+                    ['Task', 'Hours per Day'],
+                    // ['Payment', payment],
+                    ['Interest', (interest/(12*100))*loanAmount],
+                    ['Principal', payment- (interest/(12*100))*loanAmount],
+                    // ['Principarl',1 ],
+                    // ['Sleep', 10],
+                ]}
+                options={{
+                    title: 'Loan Breakdown: Monthly Payment: $'+`${payment}`,
+                    // Just add this option
+                    is3D: true,
+                    colors: ['#e3a38d', '#59c29b', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+                    backgroundColor: 'transparent'
+                }}
+                rootProps={{ 'data-testid': '2' }}
+            />
+        </div>
     </div>
   );
 }
