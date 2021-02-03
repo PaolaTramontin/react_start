@@ -2,9 +2,11 @@
 
   body{
     font-family: 'Ubuntu', sans-serif;
-    background-image: url('https://image.freepik.com/free-vector/abstract-watercolor-light-green-texture-background_1055-8198.jpg');
+    /* background-image: url('https://image.freepik.com/free-vector/abstract-watercolor-light-green-texture-background_1055-8198.jpg'); */
     background-size: cover;
     background-repeat: no-repeat;
+    background-size: 120% 120%;
+    background-image: url('https://i.pinimg.com/originals/2b/8b/b7/2b8bb7442d22fc9f0af8ca787de24a13.jpg');
   }
 
 
@@ -18,7 +20,7 @@
   border-image-slice: 1;
   text-align: center;
   margin-left:20%;
-
+  
 }
 
 
@@ -89,7 +91,7 @@ form input{
   /* border:2px solid red; */
  flex-wrap: wrap;
  display:flex;
- margin-top:10%;
+ margin-top:5%;
 }
 
 #test{
@@ -100,7 +102,7 @@ form input{
   background-image:url('https://i.postimg.cc/Jz5T5VWb/fig.png');
   background-size: 95% 95%;
   background-repeat: no-repeat;
- background-color:rgb(241, 214, 209);
+ background-color: transparent;
  color:white;
  text-align: center;
  
@@ -129,3 +131,36 @@ form input{
 
 
 
+
+
+header{
+  /* border:2px solid red; */
+  height:5vw;
+  background-color: rgb(72, 145, 129);
+  color:white;
+  font-size:3vw;
+  border-bottom: 2px solid white;
+}
+
+#fig{
+  height:90%;
+  /* border:2px solid red; */
+
+}
+
+
+#loan{
+  font-size:7vw;
+  text-align:center;
+  color:white;
+  margin-bottom:-30px;
+}
+
+
+
+#loan
+{
+  text-shadow: 0 0 2px rgb(0, 0, 0); /* horizontal-offset vertical-offset 'blur' colour */
+  -moz-text-shadow: 0 0 2px #000;
+  -webkit-text-shadow: 0 0 2px #000;
+}
