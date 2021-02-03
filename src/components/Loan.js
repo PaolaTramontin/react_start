@@ -1,20 +1,23 @@
 import React, { useState } from "react";
 // import { useForm } from "react-hook-form";
+import PaymentInfo from './PaymentInfo'
+
 
 
 export function Loan() {
     
 
-//initializing the states using Hooks.
-const [loanAmount, setLoanAmount] = useState("")
+//initializing the default states using Hooks.
 
-const [loanTerm, setLoanTerm] = useState("")
+const [loanAmount, setLoanAmount] = useState(5000)
 
-const [loanTermMonths, setLoanTermMonths] = useState("")
+const [loanTerm, setLoanTerm] = useState(5)
 
-const [interest, setInterest] = useState("")
+const [loanTermMonths, setLoanTermMonths] = useState(60)
 
-const [roundedTerm, setRoundedTerm] = useState("")
+const [interest, setInterest] = useState(4.5)
+
+const [roundedTerm, setRoundedTerm] = useState(5)
 
 const [payment, setPayment] = useState("")
 
@@ -88,8 +91,9 @@ const [payment, setPayment] = useState("")
 
 
   return (
+      <div id="outsideDiv"> 
       <div id="container"> 
-          <h2> Enter Your Details </h2>
+          <h2 id="details"> Enter Your Details </h2>
         <form onSubmit={(event)=>handleSubmit(event)}>
             <label htmlFor="name">Loan Amount </label>
                 <br/>
@@ -109,8 +113,10 @@ const [payment, setPayment] = useState("")
                 <br/>
             <button id="button-2" className="btn third" type="submit"> Click to Calculate </button>
                 <br/>
-            <h3 id="Payment"> {payment} Dollars per Month</h3>   
+            {/* <h3 id="Payment"> {payment} Dollars per Month</h3>    */}
         </form>
+    </div>
+        <PaymentInfo payment={payment} loanAmount={loanAmount}/>
     </div>
   );
 }
