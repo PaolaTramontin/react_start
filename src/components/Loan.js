@@ -18,7 +18,7 @@ export function Loan() {
 
   const [payment, setPayment] = useState(93.22);
 
-  const [totalInterest, setTotalInterest] = useState(524.96);
+  const [totalInterest, setTotalInterest] = useState('');
 
   //this function will grab the user input and set the new state for the fields.
   //if the input has been filled, the if statement will run and set the new state for the input value
@@ -87,7 +87,11 @@ export function Loan() {
     let realTotal = payment * loanTermMonths;
     let totalInt = realTotal - loanAmount;
     console.log("this total int", totalInt);
-    setTotalInterest(totalInt.toFixed(2));
+    if(totalInt >0){
+        setTotalInterest(totalInt.toFixed(2));
+    }
+    console.log("real total", realTotal)
+    console.log("total int", totalInt)
   };
 
   return (
@@ -175,7 +179,7 @@ export function Loan() {
       </div>
       <footer>
         <div id="footerDiv">
-          <a href="https://github.com/PaolaTramontin/react_start">
+          <a target="_blank"href="https://github.com/PaolaTramontin/react_start">
             <img
               id="github"
               src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/456/278/datas/original.gif"
