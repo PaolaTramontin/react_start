@@ -1,14 +1,13 @@
 
 
-  body{
-  
-    font-family: 'Ubuntu', sans-serif;
-    /* background-image: url('https://image.freepik.com/free-vector/abstract-watercolor-light-green-texture-background_1055-8198.jpg'); */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-size: 120% 120%;
-    background-image: url('https://i.pinimg.com/originals/2b/8b/b7/2b8bb7442d22fc9f0af8ca787de24a13.jpg');
-  }
+body{
+  font-family: 'Ubuntu', sans-serif;
+  /* background-image: url('https://image.freepik.com/free-vector/abstract-watercolor-light-green-texture-background_1055-8198.jpg'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 120% 120%;
+  background-image: url('https://i.pinimg.com/originals/2b/8b/b7/2b8bb7442d22fc9f0af8ca787de24a13.jpg');
+}
 
 
 
@@ -35,7 +34,7 @@ form input{
 }
 
 
-/* STYLE FOR BUTTON */
+/* STYLE FOR BUTTON OLD*/
 
 /* .btn {
   box-sizing: border-box;
@@ -71,8 +70,6 @@ form input{
 }
 
 
-
-
 .third {
   border-color: #3498db;
   color: #fff;
@@ -84,7 +81,7 @@ form input{
   box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
 } */
 
-
+/* END OF BUTTON STYLE */
 
 button {
   font-size: 1.5vh;
@@ -113,6 +110,7 @@ button::after {
 button[class^="slide"]::after {
   transition: all 0.35s;
 }
+
 button[class^="slide"]:hover::after {
   left: 0;
   right: 0;
@@ -120,75 +118,43 @@ button[class^="slide"]:hover::after {
   bottom: 0;
   transition: all 0.35s;
 }
+
 button.slide_from_left::after {
   top: 0;
   bottom: 0;
   left: -100%;
   right: 100%;
 }
+
 button.slide_from_right::after {
   top: 0;
   bottom: 0;
   left: 100%;
   right: -100%;
 }
+
 button.slide_from_top::after {
   left: 0;
   right: 0;
   top: -100%;
   bottom: 100%;
 }
+
 button.slide_from_bottom::after {
   left: 0;
   right: 0;
   top: 100%;
   bottom: -100%;
 }
+
 button[class^="grow"]::after {
   transition: all 0.3s ease;
 }
+
 button[class^="grow"]:hover::after {
   transition: all 0.3s ease-out;
 }
-/* button.grow_box::after {
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  transform: scale(0, 0);
-}
-button.grow_box:hover::after {
-  transform: scale(1, 1);
-} */
-/* button.grow_ellipse::after {
-  border-radius: 50%;
-  left: -50%;
-  right: -50%;
-  top: -150%;
-  bottom: -150%;
-  line-height: 8.34em;
-  transform: scale(0, 0);
-} */
-/* button.grow_ellipse:hover::after {
-  transform: scale(1, 1);
-}
-button.grow_skew_forward::after {
-  left: -20%;
-  right: -20%;
-  top: 0;
-  bottom: 0;
-  transform: skewX(-45deg) scale(0, 1);
-} */
-/* button.grow_skew_forward:hover::after {
-  transform: skewX(-45deg) scale(1, 1);
-} */
-/* button.grow_skew_backward::after {
-  left: -20%;
-  right: -20%;
-  top: 0;
-  bottom: 0;
-  transform: skewX(45deg) scale(0, 1);
-} */
+
 
 button.grow_spin::after {
   left: 0;
@@ -197,13 +163,10 @@ button.grow_spin::after {
   bottom: 0;
   transform: scale(0, 0) rotate(-180deg);
 }
+
 button.grow_spin:hover::after {
   transform: scale(1, 1) rotate(0deg);
 }
-
-
-
-/* END OF BUTTON STYLE */
 
 
 #outsideDiv{
@@ -214,21 +177,14 @@ button.grow_spin:hover::after {
 }
 
 #test{
-  /* border: 3px solid;
-  border-image-source: linear-gradient(45deg, rgb(94,174,156), rgb(213,120,104));
-  border-image-slice: 1; */
   width:30%;
   background-image:url('https://i.postimg.cc/Jz5T5VWb/fig.png');
   background-size: 95% 95%;
   background-repeat: no-repeat;
- background-color: transparent;
- color:white;
- text-align: center;
- 
-
+  background-color: transparent;
+  color:white;
+  text-align: center;
 }
-
-
 
 
 #paymentText{
@@ -251,10 +207,6 @@ button.grow_spin:hover::after {
   display:flex;
   justify-content: center;
 }
-
-
-
-
 
 header{
   /* border:2px solid red; */
@@ -280,7 +232,6 @@ header{
   margin-bottom:-30px;
   margin-top:10px;
   font-family: 'Ubuntu', sans-serif;
-
 }
 
 
@@ -288,7 +239,6 @@ header{
 #loan
 {
   font-family: 'Ubuntu', sans-serif;
-
   text-shadow: 0 0 2px rgb(0, 0, 0); /* horizontal-offset vertical-offset 'blur' colour */
   -moz-text-shadow: 0 0 2px #000;
   -webkit-text-shadow: 0 0 2px #000;
@@ -320,7 +270,6 @@ footer{
 }
 
 
-
 #github:hover{
 color:red;
 }
@@ -330,8 +279,3 @@ color:red;
   font-size:1vh;
   background-color:transparent;
 }
-
-/* 
-#parentDiv{
-  height:60vh;
-} */
