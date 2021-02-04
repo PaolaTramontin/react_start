@@ -10,7 +10,7 @@ const PaymentInfo = (props) => {
         <h1> Monthly Payments:</h1>
         <h2 id="total"> ${props.payment}</h2>
         <h2> Total Principal Paid: ${props.loanAmount} </h2>
-       
+       <h2> Total Interest Paid: $ {props.totalInterest} </h2>
       </div>
     </div>
   )

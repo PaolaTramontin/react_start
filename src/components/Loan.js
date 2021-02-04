@@ -24,6 +24,8 @@ const [roundedTerm, setRoundedTerm] = useState(5)
 
 const [payment, setPayment] = useState(93.22)
 
+const [totalInterest, setTotalInterest] = useState(524.96)
+
 
 //this function will grab the user input and set the new state for the fields.
 //if the input has been filled, the if statement will run and set the new state for the input value
@@ -54,7 +56,7 @@ const [payment, setPayment] = useState(93.22)
             //     console.log("decimal")
             // } 
             console.log('annual', annual)
-            setRoundedTerm (annual)
+            setRoundedTerm (annual.toFixed(2))
         }
 
         if(event.target.name === 'interest'){
@@ -69,6 +71,7 @@ const [payment, setPayment] = useState(93.22)
         event.preventDefault()
         console.log(event.target)
         calculate()
+        calTotalInt()
     }
 
 
@@ -91,6 +94,14 @@ const [payment, setPayment] = useState(93.22)
         let roundedEmi = emi.toFixed(2)
         setPayment(roundedEmi)
         console.log("this is emi", setPayment)
+    }
+
+
+    const calTotalInt = () =>{
+        let realTotal = payment * loanTermMonths
+        let totalInt =  realTotal - loanAmount
+        console.log("this total int", totalInt)
+        setTotalInterest(totalInt.toFixed(2))
     }
 
 
@@ -122,7 +133,7 @@ const [payment, setPayment] = useState(93.22)
             {/* <h3 id="Payment"> {payment} Dollars per Month</h3>    */}
         </form>
     </div>
-        <PaymentInfo payment={payment} loanAmount={loanAmount} interest={interest} />
+        <PaymentInfo payment={payment} loanAmount={loanAmount} interest={interest} totalInterest={totalInterest} />
         <div id="chart">
             <Chart
                 width={'500px'}
