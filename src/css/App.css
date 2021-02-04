@@ -15,11 +15,12 @@
   background-color:rgb(240, 247, 240);
   width:30%;
   color: rgb(213, 120, 104);
-  border: 3px solid;
+  /* border: 3px solid;
   border-image-source: linear-gradient(45deg, rgb(213,120,104), rgb(94,174,156));
-  border-image-slice: 1;
+  border-image-slice: 1; */
   text-align: center;
   margin-left:20%;
+  border-radius: 15%;
   
 }
 
@@ -35,13 +36,12 @@ form input{
 
 /* STYLE FOR BUTTON */
 
-.btn {
+/* .btn {
   box-sizing: border-box;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   background-color: transparent;
-  /* border: 2px solid #e74c3c; */
   border-radius: 0.6em;
   color: #e74c3c;
   cursor: pointer;
@@ -81,7 +81,123 @@ form input{
 }
 .third:hover {
   box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+} */
+
+
+
+button {
+  font-size: 1.5vh;
+  background: rgb(134, 201, 187);
+  color: #fff;
+  border: 2px solid rgb(63, 117, 105);
+  padding: 0.85em 0.75em;
+  margin: 1rem;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
+button:hover {
+  color: #3498db;
+}
+button::after {
+  content: "";
+  background: #ecf0f1;
+  position: absolute;
+  z-index: -1;
+  padding: 0.85em 0.75em;
+  display: block;
+}
+button[class^="slide"]::after {
+  transition: all 0.35s;
+}
+button[class^="slide"]:hover::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: all 0.35s;
+}
+button.slide_from_left::after {
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  right: 100%;
+}
+button.slide_from_right::after {
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  right: -100%;
+}
+button.slide_from_top::after {
+  left: 0;
+  right: 0;
+  top: -100%;
+  bottom: 100%;
+}
+button.slide_from_bottom::after {
+  left: 0;
+  right: 0;
+  top: 100%;
+  bottom: -100%;
+}
+button[class^="grow"]::after {
+  transition: all 0.3s ease;
+}
+button[class^="grow"]:hover::after {
+  transition: all 0.3s ease-out;
+}
+/* button.grow_box::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: scale(0, 0);
+}
+button.grow_box:hover::after {
+  transform: scale(1, 1);
+} */
+/* button.grow_ellipse::after {
+  border-radius: 50%;
+  left: -50%;
+  right: -50%;
+  top: -150%;
+  bottom: -150%;
+  line-height: 8.34em;
+  transform: scale(0, 0);
+} */
+/* button.grow_ellipse:hover::after {
+  transform: scale(1, 1);
+}
+button.grow_skew_forward::after {
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+} */
+/* button.grow_skew_forward:hover::after {
+  transform: skewX(-45deg) scale(1, 1);
+} */
+/* button.grow_skew_backward::after {
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(45deg) scale(0, 1);
+} */
+
+button.grow_spin::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: scale(0, 0) rotate(-180deg);
+}
+button.grow_spin:hover::after {
+  transform: scale(1, 1) rotate(0deg);
+}
+
 
 
 /* END OF BUTTON STYLE */
@@ -95,9 +211,9 @@ form input{
 }
 
 #test{
-  border: 3px solid;
+  /* border: 3px solid;
   border-image-source: linear-gradient(45deg, rgb(94,174,156), rgb(213,120,104));
-  border-image-slice: 1;
+  border-image-slice: 1; */
   width:30%;
   background-image:url('https://i.postimg.cc/Jz5T5VWb/fig.png');
   background-size: 95% 95%;
@@ -126,7 +242,7 @@ form input{
 #chart{
   width:60%;
   margin-left:30%;
-
+  
 }
 
 

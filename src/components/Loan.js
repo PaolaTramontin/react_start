@@ -5,6 +5,8 @@ import Chart from "react-google-charts";
 
 
 
+
+
 export function Loan() {
     
 
@@ -97,6 +99,8 @@ const [payment, setPayment] = useState(93.22)
       <div id="container"> 
           <h2 id="details"> Enter Your Details </h2>
         <form onSubmit={(event)=>handleSubmit(event)}>
+
+
             <label htmlFor="name">Loan Amount </label>
                 <br/>
             <input type="text" id="loanAmount" name="loanAmount" value={loanAmount} onChange={handleInput}/> 
@@ -113,7 +117,7 @@ const [payment, setPayment] = useState(93.22)
                 <br/>
             <input type="text" id="interest" name="interest"  value={interest}  onChange={handleInput} /> 
                 <br/>
-            <button id="button-2" className="btn third" type="submit"> Click to Calculate </button>
+            <button id="button-2" className="grow_spin"type="submit"> Click to Calculate </button>
                 <br/>
             {/* <h3 id="Payment"> {payment} Dollars per Month</h3>    */}
         </form>
