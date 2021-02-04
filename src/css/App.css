@@ -1,6 +1,7 @@
 
 
   body{
+  
     font-family: 'Ubuntu', sans-serif;
     /* background-image: url('https://image.freepik.com/free-vector/abstract-watercolor-light-green-texture-background_1055-8198.jpg'); */
     background-size: cover;
@@ -245,9 +246,10 @@ button.grow_spin:hover::after {
 
 
 #chart{
-  width:60%;
-  margin-left:30%;
-  
+  width:100%;
+  /* margin-left:30%; */
+  display:flex;
+  justify-content: center;
 }
 
 
@@ -256,6 +258,7 @@ button.grow_spin:hover::after {
 
 header{
   /* border:2px solid red; */
+  font-family: 'Ubuntu', sans-serif;
   height:5vw;
   background-color: rgb(72, 145, 129);
   color:white;
@@ -275,13 +278,60 @@ header{
   text-align:center;
   color:white;
   margin-bottom:-30px;
+  margin-top:10px;
+  font-family: 'Ubuntu', sans-serif;
+
 }
 
 
 
 #loan
 {
+  font-family: 'Ubuntu', sans-serif;
+
   text-shadow: 0 0 2px rgb(0, 0, 0); /* horizontal-offset vertical-offset 'blur' colour */
   -moz-text-shadow: 0 0 2px #000;
   -webkit-text-shadow: 0 0 2px #000;
 }
+
+
+footer{
+  height:5vw;
+  background-color: rgb(72, 145, 129);
+  display:flex;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+#github{
+  height:60%;
+  /* margin-left:45%; */
+}
+
+
+#footerDiv a{
+  height:7vh;
+  width:100%;
+  display:flex;
+  flex-direction: column;
+}
+
+
+
+#github:hover{
+color:red;
+}
+
+#gh{
+  margin-left:10%;
+  font-size:1vh;
+  background-color:transparent;
+}
+
+/* 
+#parentDiv{
+  height:60vh;
+} */

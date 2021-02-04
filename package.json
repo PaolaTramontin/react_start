@@ -11,6 +11,7 @@
     "react-google-charts": "^3.0.15",
     "react-hook-form": "^6.15.1",
     "react-scripts": "4.0.1",
+    "surge": "^0.21.7",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

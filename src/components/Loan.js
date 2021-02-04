@@ -107,6 +107,7 @@ const [totalInterest, setTotalInterest] = useState(524.96)
 
   return (
       <div id="outsideDiv"> 
+      
       <div id="container"> 
           <h2 id="details"> Enter Your Details </h2>
         <form onSubmit={(event)=>handleSubmit(event)}>
@@ -158,6 +159,16 @@ const [totalInterest, setTotalInterest] = useState(524.96)
                 rootProps={{ 'data-testid': '2' }}
             />
         </div>
+        <footer>    
+      <div id="footerDiv"> 
+        <a href="https://paolatramontin.github.io/react_start/"> 
+          <img id="github" src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/456/278/datas/original.gif" width='40px'/>
+          <span id="gh">GitHub   </span>
+       </a>
+      </div>
+
+  
+  </footer>
     </div>
   );
 }
