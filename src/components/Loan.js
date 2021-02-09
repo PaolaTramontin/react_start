@@ -23,8 +23,21 @@ export function Loan() {
   //if the input has been filled, the if statement will run and set the new state for the input value
   const handleInput = (event) => {
     if (event.target.name === "loanAmount") {
-      setLoanAmount(event.target.value);
+      let noCommas = event.target.value
+      let amount = []
+      let amountJoin = ''
+      let splitNum = noCommas.split('')
+
+      //loop to remove the comma from user inpit.
+      for(let i=0; i<splitNum.length; i++){
+        if(splitNum[i] !== ","){
+          amount.push(splitNum[i])
+        }
+        amountJoin = amount.join('')
+      }
+      setLoanAmount(amountJoin);
     }
+    
     if (event.target.name === "loanTerm") {
       let amount = event.target.value;
       setLoanTerm(event.target.value);
@@ -72,6 +85,7 @@ export function Loan() {
     setTotalInterest(totalInt.toFixed(2));
     setPayment(roundedEmi);
   };
+
 
 
  
