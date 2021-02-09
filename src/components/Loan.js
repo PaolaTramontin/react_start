@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { useForm } from "react-hook-form";
 import PaymentInfo from "./PaymentInfo";
 import Chart from "react-google-charts";
 
@@ -29,40 +28,25 @@ export function Loan() {
     if (event.target.name === "loanTerm") {
       let amount = event.target.value;
       setLoanTerm(event.target.value);
-      // let num = 10
-      // console.log(num.toFixed(2))
-      // console.log("amount", amount)
       setRoundedTerm(amount);
-      // console.log("this loan term", loanTerm)
       let monthly = event.target.value * 12;
       setLoanTermMonths(monthly);
     }
 
     if (event.target.name === "loanTermMonths") {
       setLoanTermMonths(event.target.value);
-      console.log("this loan term months", loanTermMonths);
       let annual = event.target.value / 12;
       setLoanTerm(annual);
-      // if(annual % 12 !=0){
-      //     annual= annual.toFixed(2)
-      //     console.log("decimal")
-      // }
-      console.log("annual", annual);
-      setRoundedTerm(annual.toFixed(2));
+      setRoundedTerm(annual.toFixed(0));
     }
-
     if (event.target.name === "interest") {
       setInterest(event.target.value);
     }
   };
 
-  console.log("errthang", loanAmount, loanTerm, loanTermMonths, interest);
-
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(event.target);
     calculate();
-    calTotalInt();
   };
 
   // emi (monthly payments) calculation = p*(r(1+r)^n) / (((1+r)^n) -1)
@@ -73,26 +57,24 @@ export function Loan() {
   // n = number of monthly installments aka loan term
 
   const calculate = () => {
+
+    //variables
     let p = loanAmount;
     let r = interest / (12 * 100);
     let n = loanTermMonths;
+    // calcultin to get emi, only wait first 2 decimals.
     let half = Math.pow(1 + r, n);
     let emi = (p * (r * half)) / (half - 1);
     let roundedEmi = emi.toFixed(2);
+    let realTotal = roundedEmi * loanTermMonths;
+    let totalInt = realTotal - loanAmount;
+    //setting the state for the new interest rate and monthly payment
+    setTotalInterest(totalInt.toFixed(2));
     setPayment(roundedEmi);
-    console.log("this is emi", setPayment);
   };
 
-  const calTotalInt = () => {
-    let realTotal = payment * loanTermMonths;
-    let totalInt = realTotal - loanAmount;
-    console.log("this total int", totalInt);
-    if(totalInt >0){
-        setTotalInterest(totalInt.toFixed(2));
-    }
-    console.log("real total", realTotal)
-    console.log("total int", totalInt)
-  };
+
+ 
 
   return (
     <div id="outsideDiv">
@@ -161,17 +143,15 @@ export function Loan() {
           loader={<div>Loading Chart</div>}
           data={[
             ["Task", "Hours per Day"],
-            // ['Payment', payment],
             ["Interest", (interest / (12 * 100)) * loanAmount],
             ["Principal", payment - (interest / (12 * 100)) * loanAmount],
-            // ['Principarl',1 ],
-            // ['Sleep', 10],
           ]}
           options={{
             title: "Loan Breakdown: Monthly Payment: $" + `${payment}`,
             // Just add this option
             is3D: true,
-            colors: ["#e3a38d", "#59c29b", "#ec8f6e", "#f3b49f", "#f6c7b6"],
+            // colors: ["#e3a38d", "#59c29b", "#ec8f6e", "#f3b49f", "#f6c7b6"],
+            colors: ["#E15E50", "#3AE5DF", "#D1EEEE", "#D1EEEE", "#D1EEEE"],
             backgroundColor: "transparent",
           }}
           rootProps={{ "data-testid": "2" }}

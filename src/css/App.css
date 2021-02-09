@@ -34,42 +34,6 @@ form input{
 }
 
 
-/* STYLE FOR BUTTON OLD*/
-
-/* .btn {
-  box-sizing: border-box;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  background-color: transparent;
-  border-radius: 0.6em;
-  color: #e74c3c;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-self: center;
-      -ms-flex-item-align: center;
-          align-self: center;
-  font-size: .6rem;
-  font-weight: 400;
-  line-height: 10px;
-  margin-top: 20px;
-  padding: 1em 1.6em;
-  text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  margin-left:25%;
-}
-.btn:hover, .btn:focus {
-  color: #fff;
-  outline: 0;
-}
-
-
 .third {
   border-color: #3498db;
   color: #fff;
@@ -215,7 +179,7 @@ header{
   background-color: rgb(72, 145, 129);
   color:white;
   font-size:3vw;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid salmon;
 }
 
 #fig{
@@ -239,9 +203,9 @@ header{
 #loan
 {
   font-family: 'Ubuntu', sans-serif;
-  text-shadow: 0 0 2px rgb(0, 0, 0); /* horizontal-offset vertical-offset 'blur' colour */
-  -moz-text-shadow: 0 0 2px #000;
-  -webkit-text-shadow: 0 0 2px #000;
+  text-shadow: 0 0 6px rgb(24, 175, 165); /* horizontal-offset vertical-offset 'blur' colour */
+  -moz-text-shadow: 0 0 4px #000;
+  -webkit-text-shadow: 0 0 4px #000;
 }
 
 
