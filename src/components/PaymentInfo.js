@@ -5,7 +5,7 @@ const PaymentInfo = (props) => {
 
 
   return (
-    <div id="test">
+    <div id="paymentDiv">
       <div id="paymentText"> 
         <h1> Monthly Payments:</h1>
         <h2 id="total"> ${props.payment}</h2>

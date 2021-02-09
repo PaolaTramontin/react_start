@@ -80,7 +80,7 @@ export function Loan() {
     <div id="outsideDiv">
       <div id="container">
         <h2 id="details"> Enter Your Details </h2>
-        <form onSubmit={(event) => handleSubmit(event)}>
+        <form  id="mainForm" onSubmit={(event) => handleSubmit(event)}>
           <label htmlFor="name">Loan Amount </label>
           <br />
           <input
@@ -137,8 +137,8 @@ export function Loan() {
       />
       <div id="chart">
         <Chart
-          width={"500px"}
-          height={"300px"}
+          width={"40vw"}
+          height={"40vh"}
           chartType="PieChart"
           loader={<div>Loading Chart</div>}
           data={[
